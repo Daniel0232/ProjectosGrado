@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="texto">
+    <input type="button" value="boton" id="boton">
+    <script text="javascript">
+
+        var contador = 0;
+        var boton = document.getElementsByTagName('input')[1];
+       
+        function contadorpulsado(){
+            if(document.readyState == 'complete'){
+                boton.addEventListener("click",function(){
+                    contador++;
+                    document.getElementsByTagName('input')[0].value=contador
+                });
+            }
+        }
+        document.addEventListener('readystatechange',contadorpulsado);	
+    </script>
+</body>
+</html>
